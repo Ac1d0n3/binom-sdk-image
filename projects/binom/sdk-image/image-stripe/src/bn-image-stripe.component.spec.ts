@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SdkImageComponent } from './sdk-image.component';
+import { BnImageStripeComponent } from './bn-image-stripe.component';
 
-describe('SdkImageComponent', () => {
-  let component: SdkImageComponent;
-  let fixture: ComponentFixture<SdkImageComponent>;
+describe('BnImageStripeComponent', () => {
+  let component: BnImageStripeComponent;
+  let fixture: ComponentFixture<BnImageStripeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SdkImageComponent]
+      declarations: [ BnImageStripeComponent ]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(SdkImageComponent);
+
+    fixture = TestBed.createComponent(BnImageStripeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SdkImageService } from './sdk-image.service';
+import { BnLazyImageService } from './bn-lazy-image.service';
 
-describe('SdkImageService', () => {
-  let service: SdkImageService;
+describe('BnLazyImageService', () => {
+  let service: BnLazyImageService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SdkImageService);
+    service = TestBed.inject(BnLazyImageService);
   });
 
   it('should be created', () => {
