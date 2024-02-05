@@ -1,11 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'bn-player-buttons-box',
   templateUrl: './box.component.html',
   standalone:true,
-  imports:[],
+  imports:[CommonModule, MatButtonModule, MatTooltipModule],
 })
 export class BoxComponent implements OnInit {
   @Output() action = new EventEmitter();

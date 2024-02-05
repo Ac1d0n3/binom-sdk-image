@@ -1,7 +1,7 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[libBnLazyBg]'
+  selector: '[bnLazyBg]'
 })
 export class BnLazyBgDirective {
 

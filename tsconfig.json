@@ -3,6 +3,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
+      "@binom/sdk-image/*": [
+        "./dist/binom/sdk-image/*"
+      ],
       "@binom/sdk-image": [
         "./dist/binom/sdk-image"
       ]

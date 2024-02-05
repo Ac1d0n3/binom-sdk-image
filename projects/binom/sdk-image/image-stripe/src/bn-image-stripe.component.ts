@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, HostBinding, ViewChild, ElementRef, AfterViewInit, OnDestroy, Output,EventEmitter } from '@angular/core';
-import { BnLayoutInfoService } from '@binom/sdk/layout';
+import { BnLayoutService } from '@binom/sdk-layout/core';
 
 
 import { Subscription } from "rxjs";
@@ -41,7 +41,7 @@ export class BnImageStripeComponent implements OnInit,AfterViewInit,OnDestroy {
   @Input() activeImage: number = 0;
 
   constructor( 
-    private bnLayoutService: BnLayoutInfoService
+    private bnLayoutService: BnLayoutService
   ) { }
 
   ngOnInit(): void {

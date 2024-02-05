@@ -1,11 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'bn-player-buttons-round',
   templateUrl: './round.component.html',
   standalone:true,
-  imports:[],
+  imports:[CommonModule, MatButtonModule, MatTooltipModule],
 })
 export class RoundComponent  implements OnInit {
   @Output() action = new EventEmitter();

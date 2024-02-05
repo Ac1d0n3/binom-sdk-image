@@ -6,13 +6,17 @@ import {
   flipIn,flipOut,jackIn,jackOut
 } from "./animations";
 import { BnThemeService } from '@binom/sdk-theme/core';
-import { BnLayoutInfoService } from '@binom/sdk-layout/core';
+import { BnLayoutService } from '@binom/sdk-layout/core';
+import { CommonModule } from '@angular/common';
+import { BnPlayerButtonsComponent } from '@binom/sdk-image/buttons-media';
+import { BnImageStripeComponent } from '@binom/sdk-image/image-stripe';
+import { BnExifInfoComponent } from '@binom/sdk-image/image-info';
 
 @Component({
   selector: 'bn-bg-slider',
   templateUrl: './bn-bg-slider.component.html',
   standalone:true,
-  imports:[],
+  imports:[CommonModule,BnPlayerButtonsComponent, BnImageStripeComponent, BnExifInfoComponent],
   animations: [
     trigger("slideAnimation", [
       /* scale */
@@ -82,7 +86,7 @@ export class BnBgSliderComponent implements OnInit, OnDestroy {
   constructor(
     private themeService:BnThemeService ,
     private hostElement: ElementRef,
-    private bnLayoutService: BnLayoutInfoService,
+    private bnLayoutService: BnLayoutService ,
     private zone:NgZone
   ) { }
 
@@ -191,15 +195,15 @@ export class BnBgSliderComponent implements OnInit, OnDestroy {
   }
 
   fireAction(data:any){
-   // console.log(data)
     if(data === 'grid') this.toogleStripe = !this.toogleStripe
-    if(data === 'pause') this.startStop(true)
-    if(data === 'play') this.startStop(false)
-    if(data === 'forward-step' )this.forwardSlide();
-    if(data === 'backward-step' )this.backwardSlide();
-    if(data === 'collapse' ) this.fullscreen = false;
-    if(data === 'expand') this.fullscreen = true;
+    else if(data === 'pause') this.startStop(true)
+    else if(data === 'play') this.startStop(false)
+    else if(data === 'forward-step' )this.forwardSlide();
+    else if(data === 'backward-step' )this.backwardSlide();
+    else if(data === 'collapse' ) this.fullscreen = false;
+    else if(data === 'expand') this.fullscreen = true;
   }
+  
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
     if(this.sub) this.sub.unsubscribe();
